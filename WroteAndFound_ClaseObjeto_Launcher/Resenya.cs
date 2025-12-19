@@ -6,7 +6,7 @@ class Resenya
     private static bool Salir = false;
     private static int CalificacionResenya;
 
-
+    // Constructor Reseña
     Resenya(string autor, int calificacion)
     {
         this.Autor = autor;
@@ -112,4 +112,5 @@ class Resenya
 
     }
 }
+
 
