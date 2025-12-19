@@ -9,7 +9,7 @@ class Libreria
 
     static bool Salir = false;
 
-
+    // Constructor de Libreria
     public Libreria(string nombre, string creador, DateOnly creadoEn)
     {
         this.Nombre = nombre;
@@ -17,15 +17,19 @@ class Libreria
         this.CreadoEl = creadoEn;
     }
 
+    // Poder obtener la list de libros, ya que es privada
     public static List<Libro> ListaDeLibros()
     {
         return Libros;
     }
 
+    // Saber el número de libros que tiene la lista
     public static int NumeroDeLibros()
     {
         return Libros.Count;
     }
+
+    // saber el número de resenyas que hay
     public static int NumeroDeResenyas()
     {
         int NumeroDeResenyas = 0;
@@ -145,7 +149,7 @@ class Libreria
                 int Anyo = Comprobaciones.PedirNumero("Año", -4000, 2025, false);
                 string Genero = Comprobaciones.PedirString("Género", 40);
 
-                Libros.Add(new Libro(Titulo, Autor, Anyo, Genero));
+                Libros.Add(new Libro(Titulo, Autor, Anyo, Genero)); // Crear un Libro con lo que haya puesto el usuario, y ponerlo automáticamente en la lista.
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine("¡Libro añadido!");
                 Console.WriteLine("");
@@ -189,13 +193,13 @@ class Libreria
                         {
                             // Lo de abajo, es para que se borre el libros y no aparezca como prestado en un usuario.
 
-                            foreach (var Usuario in Prestamo.DiccionarioPrestamos())
+                            foreach (var Usuario in Prestamo.DiccionarioPrestamos()) // Mirar cada objeto del diccionario de Prestamos.
                             {
-                                foreach (var Pres in Usuario.Value)
+                                foreach (var Pres in Usuario.Value) // Mirar cual es el valor de el objeto del diccionario Actual.
                                 {
                                     if (Libros[Menus.Opcion - 1].Titulo == Pres)
                                     {
-                                        foreach (var usuario in Prestamo.DiccionarioPrestamos())
+                                        foreach (var usuario in Prestamo.DiccionarioPrestamos()) 
                                         {
                                             usuario.Value.Remove(Libros[Menus.Opcion - 1].Titulo);
                                         }
@@ -379,3 +383,4 @@ class Libreria
         }
     }
 }
+
