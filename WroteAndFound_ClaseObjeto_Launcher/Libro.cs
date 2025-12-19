@@ -8,7 +8,7 @@ class Libro{
 
     public List<Resenya> Resenyas = new List<Resenya>();
 
-
+    // Constructor de Libro
     public Libro(string titulo, string autor = "Desconocido", int anyo = 0, string genero = "Desconocido")
     {
         this.Titulo = titulo;
