@@ -107,8 +107,6 @@ class Comprobaciones
 
     // Comprobar que hay usuarios
 
-
-
     public static bool HayUsuarios()
     {
         int NumeroUsuarios = Usuario.NumeroDeUsuarios();
@@ -122,7 +120,7 @@ class Comprobaciones
         }
     }
 
-
+    // Comprueba si un libro en concreto está disponible
     public static string EstaDisponible(List<Libro> ListaLibros, int i)
     {
         if (ListaLibros[i].Disponible == true) 
@@ -134,4 +132,5 @@ class Comprobaciones
             return "No Disponible"; 
         }
     }
+
 }
